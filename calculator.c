@@ -19,7 +19,8 @@ int divide(int a, int b)
 {
     if (b == 0)
     {
-        return 0;
+        return 0; // represent undefined
     }
+
     return a / b;
 }

@@ -118,7 +118,12 @@ void test_multiply_overflow(void)
     TEST_ASSERT_TRUE(result < 0); // checks if overflow occured
 }
 
-// Test integer underflow
+void test_divide_overflow(void)
+{
+    int result = divide(INT_MIN, -1);
+    TEST_ASSERT_TRUE(result < 0); // check if overflow occurs
+}
+
 void test_add_underflow(void)
 {
     int result = add(INT_MIN, -1);
@@ -135,6 +140,12 @@ void test_multiply_underflow(void)
 {
     int result = multiply(INT_MIN / 2, 3);
     TEST_ASSERT_TRUE(result > 0); // checks if underflow
+}
+
+void test_divide_underflow(void)
+{
+    int result = divide(INT_MIN, 2);
+    TEST_ASSERT_TRUE(result >= INT_MIN); // checks if underflow
 }
 int main(void)
 {
@@ -161,6 +172,8 @@ int main(void)
     RUN_TEST(test_divide_positive_and_negative_numbers);
     RUN_TEST(test_divide_negative_numbers);
     RUN_TEST(test_divide_zero);
+    RUN_TEST(test_divide_overflow);
+    RUN_TEST(test_divide_underflow);
 
     return UNITY_END();
 }
