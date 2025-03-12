@@ -19,7 +19,12 @@ void tearDown(void)
 
 void test_add_positive_numbers(void)
 {
-    TEST_ASSERT_EQUAL(5, add(2, 3)); // expect to fail
+    TEST_ASSERT_EQUAL(5, add(2, 3));
+}
+
+void test_subtract_positive_numbers(void)
+{
+    TEST_ASSERT_EQUAL(2, subtract(5, 3)); // expect 5 - 3 = 2
 }
 
 void test_add_positive_and_negative_numbers(void)
@@ -59,6 +64,7 @@ int main(void)
     RUN_TEST(test_add_zero);
     RUN_TEST(test_add_overflow);
     RUN_TEST(test_add_underflow);
+    RUN_TEST(test_subtract_positive_numbers);
 
     return UNITY_END();
 }
