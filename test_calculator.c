@@ -27,6 +27,11 @@ void test_subtract_positive_numbers(void)
     TEST_ASSERT_EQUAL(2, subtract(5, 3)); // expect 5 - 3 = 2
 }
 
+void test_multiply_positive_numbers(void)
+{
+    TEST_ASSERT_EQUAL(6, multiply(2, 3));
+}
+
 void test_add_positive_and_negative_numbers(void)
 {
     TEST_ASSERT_EQUAL(1, add(5, -4)); // expect 5 + -4 =1
@@ -98,6 +103,7 @@ int main(void)
     RUN_TEST(test_subtract_zero);
     RUN_TEST(test_subtract_overflow);
     RUN_TEST(test_subtract_underflow);
+    RUN_TEST(test_multiply_positive_numbers);
 
     return UNITY_END();
 }
