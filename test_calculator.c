@@ -32,6 +32,11 @@ void test_multiply_positive_numbers(void)
     TEST_ASSERT_EQUAL(6, multiply(2, 3)); // expect 2 * 3 = 6
 }
 
+void test_divide_positive_numbers(void)
+{
+    TEST_ASSERT_EQUAL(2, divide(6, 3)); // expect 6 / 3 = 2
+}
+
 void test_add_positive_and_negative_numbers(void)
 {
     TEST_ASSERT_EQUAL(1, add(5, -4)); // expect 5 + -4 =1
@@ -45,6 +50,11 @@ void test_subtract_positive_and_negative_numbers(void)
 void test_multiply_positive_and_negative_numbers(void)
 {
     TEST_ASSERT_EQUAL(-20, multiply(5, -4)); // expect 5 * -4 = -20
+}
+
+void test_divide_positive_and_negative_numbers(void)
+{
+    TEST_ASSERT_EQUAL(-5, divide(20, -4)); // expect 20 / -4 = -5
 }
 
 void test_add_negative_numbers(void)
@@ -62,6 +72,11 @@ void test_multiply_negative_numbers(void)
     TEST_ASSERT_EQUAL(12, multiply(-3, -4)); // expect -3 * -4 = 12
 }
 
+void test_divide_negative_numbers(void)
+{
+    TEST_ASSERT_EQUAL(3, divide(-12, -4)); // expect -12 / -4 = 3
+}
+
 void test_add_zero(void)
 {
     TEST_ASSERT_EQUAL(10, add(10, 0)); // expect 10 - 0 = 10
@@ -77,6 +92,11 @@ void test_multiply_zero(void)
 {
     TEST_ASSERT_EQUAL(0, multiply(10, 0)); // expect 10 * 0 = 0
     TEST_ASSERT_EQUAL(0, multiply(0, 0));  // expect 0 * 0 = 0
+}
+
+void test_divide_zero(void)
+{
+    TEST_ASSERT_EQUAL(0, divide(0, 10)); // expect 0 / 10 = 0
 }
 
 void test_add_overflow(void)
@@ -136,6 +156,10 @@ int main(void)
     RUN_TEST(test_multiply_zero);
     RUN_TEST(test_multiply_overflow);
     RUN_TEST(test_multiply_underflow);
+    RUN_TEST(test_divide_positive_numbers);
+    RUN_TEST(test_divide_positive_and_negative_numbers);
+    RUN_TEST(test_divide_negative_numbers);
+    RUN_TEST(test_divide_zero);
 
     return UNITY_END();
 }
