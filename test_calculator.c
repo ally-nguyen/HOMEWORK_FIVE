@@ -97,6 +97,7 @@ void test_multiply_zero(void)
 void test_divide_zero(void)
 {
     TEST_ASSERT_EQUAL(0, divide(0, 10)); // expect 0 / 10 = 0
+    TEST_ASSERT_EQUAL(0, divide(0, 0));  // expect 0 / 0 to return 0 (rep undefined)
 }
 
 void test_add_overflow(void)
